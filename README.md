@@ -100,3 +100,10 @@ This repository contains educational materials for the AI Internship program.
 
 **Welcome to the AI Internship! 🎓**
 
+## Claude Code setup
+
+Set your GitHub token before using the `github` MCP server:
+
+    export GITHUB_TOKEN="your-personal-access-token"
+
+Add that line to your shell profile (for example `~/.zshrc`). Never commit a real token.
