@@ -4,4 +4,4 @@
 
 **Direct.** Name the task, say you did it directly, explain why a plan wasn’t needed, and say how you checked it. Example: adding .mcp.json was one file with a fixed format, and you checked it with /mcp.
 
-**Skill rather than CLAUDE.md.** Name the codebase-analysis skill, explain that it runs on demand and produces long output, and say why context: fork keeps that output out of the main conversation. Include one real finding from running /codebase-analysis.
+**Skill rather than CLAUDE.md.** Running /codebase-analysis tests showed that only one of the five test files is a real pytest suite, the customer-support skeleton’s test_enforcement.py. The other four are manual scripts that need a live server or API, and none follows the test rule I wrote. That is the next thing to fix.
