@@ -1,0 +1,89 @@
+
+claude-md-evidence
+
+
+WITH CLAUDE.md (project file present)
+
+Here's a function that follows the project conventions. I haven't edited any files.
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def add_and_record(a: float, b: float) -> float:
+    """Return the sum of a and b and log the result."""
+    result = a + b
+    logger.info("add_and_record(%s, %s) = %s", a, b, result)
+    return result
+* One-line docstring: the new function has one, as the project's CLAUDE.md requires.
+* Logging, not print: it records the result with the logging module, since this is a non-test module. The logger is named after the module with getLogger(__name__).
+* Lazy %s formatting: the log message is only built if INFO-level logging is turned on.
+
+
+
+Show me, in the chat only and without editing files, a short Python function in a non-test module that adds two numbers and records the result. Use the project conventions.
+
+WITHOUT  CLAUDE.md
+Here's the function, written to the project conventions:
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def add_and_record(a: float, b: float) -> float:
+    """Return the sum of a and b and log the result."""
+    result = a + b
+    logger.info("add_and_record: %s + %s = %s", a, b, result)
+    return result
+* Where the conventions come from: In your working tree, CLAUDE.md has been renamed to CLAUDE.md.off, so it isn't loading right now. I used the rules from that file, which match the committed version.
+* One-line docstring: The project requires one on every new Python function.
+* logging, not print: Non-test modules must use logging, so the function "records" the result through a module-level logger.
+* Lazy %s formatting: The log message is only formatted if INFO-level logging is turned on.
+* No files changed: This is in the chat only.
+
+For calc_  Function check with and without claude.md :
+
+With  Claude.md
+Write a short Python function in a non-test module that adds two numbers and records the result. Show the code in the chat only. Do not edit any files.
+
+Following the project conventions (the calc_ prefix, a one-line docstring, and logging instead of print):
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def calc_add_and_record(a: float, b: float) -> float:
+    """Add two numbers and log the result."""
+    result = a + b
+    logger.info("calc_add_and_record(%s, %s) = %s", a, b, result)
+    return result
+* "Records" here means writing the result to the log at INFO level. You need to configure logging somewhere, for example with logging.basicConfig(level=logging.INFO), or the message won't show up.
+* I haven't edited any files.
+
+
+
+
+
+WITHOUTCLAUDE.md
+
+
+Write a short Python function in a non-test module that adds two numbers and records the result. Show the code in the chat only. Do not edit any files.
+
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def calc_add_and_record(a: float, b: float) -> float:
+    """Add two numbers and log the result."""
+    result = a + b
+    logger.info("calc_add_and_record(%s, %s) = %s", a, b, result)
+    return result
+* I followed the team conventions in CLAUDE.md.off: a calc_ prefix on the name, a one-line docstring, and logging instead of print.
+* Those rules aren't active right now. CLAUDE.md is shown as deleted and only exists as CLAUDE.md.off, so Claude Code won't load them unless you rename the file back.
+* The result is logged at INFO level, so you'll only see it if logging is set up, for example with logging.basicConfig(level=logging.INFO).
+* I didn't edit any files.
